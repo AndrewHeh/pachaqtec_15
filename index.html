@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Crud</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dog Crud</h1>
+        <button id="addPetBtn">Agregar Mascota</button>
+    </header>
+
+    <section id="petCardsContainer" class="cards-container">
+        <!-- Las tarjetas de las mascotas se generarán aquí -->
+    </section>
+
+    <!-- Modal para agregar/editar mascota -->
+    <div id="petModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Agregar Mascota</h2>
+            <form id="petForm">
+                <input type="text" id="name" placeholder="Nombre" required>
+                <input type="text" id="apellido" placeholder="Apellido" required>
+                <input type="text" id="raza" placeholder="Raza" required>
+                <input type="tel" id="telefono" placeholder="Teléfono" required>
+                <input type="text" id="pais" placeholder="País" required>
+                <input type="url" id="fotoUrl" placeholder="URL de Fotografía" required>
+                <textarea id="descripcion" placeholder="Sobre él/ella"></textarea>
+                <div class="form-buttons">
+                    <button type="submit" id="savePetBtn">Aceptar</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
