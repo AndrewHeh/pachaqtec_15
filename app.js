@@ -1,6 +1,6 @@
-let pets = [];  // Aquí almacenaremos las mascotas
+let pets = [];  
 let isEditing = false;
-let currentPetIndex = -1; // Índice de la mascota que se está editando
+let currentPetIndex = -1; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const addPetBtn = document.getElementById('addPetBtn');
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modalTitle');
     const savePetBtn = document.getElementById('savePetBtn');
 
-    // Mostrar el modal para agregar mascota
+    
     addPetBtn.addEventListener('click', () => {
         isEditing = false;
         currentPetIndex = -1;
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petModal.style.display = 'flex';
     });
 
-    // Cerrar el modal
+    
     closeModal.addEventListener('click', () => {
         petModal.style.display = 'none';
     });
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         petModal.style.display = 'none';
     });
 
-    // Agregar o editar una mascota
+    
     petForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         if (isEditing) {
-            // Actualizar mascota
+            
             pets[currentPetIndex] = newPet;
         } else {
-            // Agregar nueva mascota
+            
             pets.push(newPet);
         }
 
@@ -79,19 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Función para editar mascotas
+
 function editPet(index) {
     const petModal = document.getElementById('petModal');
     const modalTitle = document.getElementById('modalTitle');
 
-    // Cambiar estado a modo edición
+    
     isEditing = true;
     currentPetIndex = index;
 
-    // Obtener la mascota seleccionada
+    
     const pet = pets[index];
 
-    // Llenar el formulario con los datos de la mascota
+    
     document.getElementById('name').value = pet.name;
     document.getElementById('apellido').value = pet.apellido;
     document.getElementById('raza').value = pet.raza;
@@ -100,14 +100,14 @@ function editPet(index) {
     document.getElementById('fotoUrl').value = pet.fotoUrl;
     document.getElementById('descripcion').value = pet.descripcion;
 
-    // Cambiar el título del modal
+    
     modalTitle.textContent = 'Editar Mascota';
 
-    // Mostrar el modal
+    
     petModal.style.display = 'flex';
 }
 
-// Función para eliminar mascotas
+
 function deletePet(index) {
     pets.splice(index, 1);
     document.getElementById('petCardsContainer').innerHTML = '';
